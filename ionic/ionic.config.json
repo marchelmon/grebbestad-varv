@@ -1,0 +1,8 @@
+{
+  "name": "grebbestad",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "45d8c4ff"
+}

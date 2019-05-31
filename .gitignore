@@ -1,0 +1,10 @@
+
+*/package-lock.json
+
+# NODE
+.node_modules
+node_modules
+*/node_modules
+/node_modules/*
+
+.DS_Store

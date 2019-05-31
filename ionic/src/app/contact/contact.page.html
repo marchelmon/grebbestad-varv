@@ -1,0 +1,36 @@
+<ion-content padding>
+	<ion-img src="assets/logga.png" width="100%"></ion-img>
+
+	<ion-item>
+	  <ion-label position="floating">Namn</ion-label>
+	  <ion-input autofocus="true" [(ngModel)]="main.name" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Telefonnummer</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.phone" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Email</ion-label>
+	  <ion-input type="email" autocorrect="off" [(ngModel)]="main.mail"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Adress</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.adress" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Postnummer</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.zip" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Ort</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.ort" color="primary"></ion-input>
+	</ion-item>
+	<br><br>
+
+	<ion-textarea style="border: 1px solid #d3d3d3; border-radius: 5px;" placeholder="Övrig information"></ion-textarea>
+
+	<br>
+	<ion-button float-right color="primary" (click)="mailaOffert()">Skicka offert</ion-button>
+	<br><br><br><br><br>
+
+</ion-content>

@@ -1,0 +1,109 @@
+<ion-content>
+	<div>
+		<ion-img src="assets/logga.png" width="100%"></ion-img>
+		<h5 text-center color="primary">Beräkna vinterförvaring</h5>
+	</div>
+	<div>
+	<ion-item>
+	  <ion-label position="floating">Båtmodell</ion-label>
+	  <ion-input type="text" autofocus="true" [(ngModel)]="main.model" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Längd (meter)</ion-label>
+	  <ion-input type="number" [(ngModel)]="main.length" color="primary" (ionChange)="calcSize()" debounce="500"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Bredd (meter)</ion-label>
+	  <ion-input type="number" [(ngModel)]="main.width" color="primary" (ionChange)="calcSize()" debounce="500"></ion-input>
+	</ion-item>
+	</div>
+	<br>
+	<ion-item>
+	  <ion-label>Vikt (ton)</ion-label>
+	  <ion-select value="brown" okText="Ok" cancelText="Avbryt" (ionChange)="calcWeight()" [(ngModel)]="main.weight">
+      	<ion-select-option value="1">0-2</ion-select-option>
+      	<ion-select-option value="2">2-4</ion-select-option>
+      	<ion-select-option value="4">4-6</ion-select-option>
+      	<ion-select-option value="6">6-8</ion-select-option>
+      	<ion-select-option value="8">8-10</ion-select-option>
+      	<ion-select-option value="10">10-12</ion-select-option>
+      	<ion-select-option value="12">12-14</ion-select-option>
+      	<ion-select-option value="14">14-16</ion-select-option>
+      	<ion-select-option value="16">16-18</ion-select-option>
+      	<ion-select-option value="18">18-20</ion-select-option>
+      	<ion-select-option value="30">20-30</ion-select-option>
+      </ion-select>
+  	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Miljöavgift</ion-label>
+	  <ion-input type="number" [(ngModel)]="main.miljoAvg" color="primary" (ionChange)="calcTotal()" debounce="500"></ion-input>
+	</ion-item>
+
+	<br><br>
+	<ion-row style="padding: 0 3px 0 5px;">
+		<ion-col size="8" style="text-align: left;"><strong color="primary">Varmhall <small> (750sek/m2):</small></strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.inside }}</strong></ion-col>
+	</ion-row>
+	<ion-row style="border-bottom: 1px solid #d3d3d3; padding: 0 3px 0 5px;">
+		<ion-col size="8"><strong color="primary">Hanteringskostnad: </strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.handle }}</strong></ion-col>
+	</ion-row>
+	<ion-row style="padding: 0 3px 0 5px;">
+		<ion-col size="8"><strong color="primary">Summa </strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.sumInside }}</strong></ion-col>
+	</ion-row>
+	<br><br>
+	<ion-row style="padding: 0 3px 0 5px;">
+		<ion-col size="8" ><strong color="primary">Inhägnat område <small> (350sek/m2):</small></strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.outside }}</strong></ion-col>
+	</ion-row>
+	<ion-row style="border-bottom: 1px solid #d3d3d3; padding: 0 3px 0 5px;">
+		<ion-col size="8"><strong color="primary">Hanteringskostnad: </strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.handle }}</strong></ion-col>
+	</ion-row>
+	<ion-row style="border-bottom: 1px solid #d3d3d3; padding: 0 3px 0 5px;">
+		<ion-col size="8"><strong color="primary">Miljöavgift: </strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.miljoAvg }}</strong></ion-col>
+	</ion-row>
+	<ion-row style="padding: 0 3px 0 5px;">
+		<ion-col size="8"><strong color="primary">Summa</strong></ion-col>
+		<ion-col size="4" style="text-align: right;"><strong color="primary">{{ main.sumOutside }}</strong></ion-col>
+	</ion-row>
+	<br><br>
+	<h5 text-center style="padding: 0; margin: 0;">Fyll i dina uppgifter</h5>
+	<ion-item>
+	  <ion-label position="floating">Namn</ion-label>
+	  <ion-input [(ngModel)]="main.name" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Telefonnummer</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.phone" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Email</ion-label>
+	  <ion-input type="email" autocorrect="off" [(ngModel)]="main.mail"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Adress</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.adress" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Postnummer</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.zip" color="primary"></ion-input>
+	</ion-item>
+	<ion-item>
+	  <ion-label position="floating">Ort</ion-label>
+	  <ion-input type="text" [(ngModel)]="main.ort" color="primary"></ion-input>
+	</ion-item>
+	<br><br>
+
+	<ion-textarea margin style="border: 1px solid #d3d3d3; border-radius: 5px;" placeholder="Övrig information"></ion-textarea>
+
+	<br>
+	<ion-button float-right color="primary" (click)="mailaOffert()">Skicka offert</ion-button>
+	<br><br><br><br>
+</ion-content>
+
+
+
+

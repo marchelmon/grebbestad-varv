@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "grebbestad-varv",
+    "description": "Beräkna båtförvaring i vinter, hos grebbestad varv & båtförvaring",
+    "slug": "grebbestad-varv",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.3",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#16216a"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "versionCode": 6,
+      "package": "se.grebbestadbatforvaring.vinterforvaring",
+      "permissions": [],
+      "icon": "./assets/icon.png"
+    },
+    "ios": {
+      "bundleIdentifier": "se.grebbestadbatforvaring.vinterforvaring",
+      "buildNumber": "1.0.1",
+      "icon": "./assets/icon.png"
+    }
+  }
+}

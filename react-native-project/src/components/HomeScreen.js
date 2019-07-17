@@ -88,7 +88,7 @@ export default class HomeScreen extends Component{
 		} else if(this.state.weight < 12) {
 			return 7800;
 		} else if (this.state.weight < 14) {
-			return 86000;
+			return 8600;
 		} else if(this.state.weight < 16) {
 			return 10000;
 		} else if (this.state.weight < 18) {
